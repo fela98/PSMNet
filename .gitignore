@@ -1,0 +1,7 @@
+*.png
+data_scene_flow/*
+datasets/*
+.idea/*
+__pycache__
+venv
+pretrained_model_KITTI2015.tar
