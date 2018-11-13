@@ -3,5 +3,6 @@
 data_scene_flow/*
 datasets/*
 .*/
+trained/
 __pycache__
 venv
