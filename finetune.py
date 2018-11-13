@@ -55,11 +55,11 @@ all_left_img, all_right_img, all_left_disp, test_left_img, test_right_img, test_
 
 TrainImgLoader = torch.utils.data.DataLoader(
          DA.myImageFloder(all_left_img,all_right_img,all_left_disp, True), 
-         batch_size= 12, shuffle= True, num_workers= 8, drop_last=False)
+         batch_size= 1, shuffle= True, num_workers= 1, drop_last=False)
 
 TestImgLoader = torch.utils.data.DataLoader(
          DA.myImageFloder(test_left_img,test_right_img,test_left_disp, False), 
-         batch_size= 8, shuffle= False, num_workers= 4, drop_last=False)
+         batch_size= 1, shuffle= False, num_workers= 1, drop_last=False)
 
 if args.model == 'stackhourglass':
     model = stackhourglass(args.maxdisp)
@@ -134,10 +134,10 @@ def test(imgL,imgR,disp_true):
         return 1-(float(torch.sum(correct))/float(len(index[0])))
 
 def adjust_learning_rate(optimizer, epoch):
-    if epoch <= 200:
-       lr = 0.001
+    if epoch <= 20:
+       lr = 0.005
     else:
-       lr = 0.0001
+       lr = 0.001
     print(lr)
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
