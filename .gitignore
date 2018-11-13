@@ -1,4 +1,5 @@
 *.png
+*.pyc
 data_scene_flow/*
 datasets/*
 .idea/*
