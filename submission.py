@@ -104,7 +104,7 @@ def main():
 
        start_time = time.time()
        pred_disp = test(imgL,imgR)
-       print('time = %.2f' %(time.time() - start_time))
+       print(test_left_img[inx].split('/')[-1] + ': time = %.2f' %(time.time() - start_time))
 
        top_pad   = 384-imgL_o.shape[0]
        left_pad  = 1248-imgL_o.shape[1]
